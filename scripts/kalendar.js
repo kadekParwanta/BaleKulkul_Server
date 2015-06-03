@@ -36,7 +36,7 @@ function calcdays(date) {
       else
         days += 30;
     }
-    return days;
+    return days+1;
   }
   var extraday = [1, 3, 5, 7, 8, 10, 12];
   var dayarr = date.match(PATTERN);
