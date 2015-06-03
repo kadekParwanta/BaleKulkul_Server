@@ -17,11 +17,9 @@ function iskabisat(year) {
  *   given year and primordial year, Y0
  */
 function kabisats(year) {
-  var kabn = Math.floor((year-EPOCH) / 4);
   var kabcount = 0;
-  for(var i=0; i<kabn; i++) {
-    var y = EPOCH + i * 4;
-    if(iskabisat(y))
+  for(var i=1900; i<year; i++) {
+    if(iskabisat(i))
       kabcount++;
   }
   return kabcount;
@@ -31,14 +29,16 @@ function calcdays(date) {
   function months(mth) {
     var days = 0;
     for(var i=1; i<mth; i++) {
-      if(extraday.indexOf(i) === -1)
+      if(extraday.indexOf(i) !== -1)
         days += 31;
+      else if (i == 2)
+        days += 28;
       else
         days += 30;
     }
     return days;
   }
-  var extraday = [0, 2, 4, 6, 7, 9, 11];
+  var extraday = [1, 3, 5, 7, 8, 10, 12];
   var dayarr = date.match(PATTERN);
   var day = parseInt(dayarr[2]);
   var month = parseInt(dayarr[1]);
