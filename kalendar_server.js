@@ -13,6 +13,16 @@ var server = http.createServer(function(req, res){
     serve(__dirname + '/' + req.url, 'text/css');
   } else if (req.method == 'GET' && req.url.substr(-2) == 'js'){
     serve(__dirname + '/' + req.url, 'text/javascript');
+    /*
+  } else if(req.method == 'GET' &&
+    req.url.substr(0, 14) == '/date_property')
+  {
+    req.on('end', function() {
+      var queries = req.url.split('?', 2)[1];
+      res.writeHead(200, { 'Content-Type': 'text/html' });
+      res.end('<p>The queries are: ' + queries + '</p>');
+    });
+    */
   } else if (req.method == 'POST' && req.url == '/date_property') {
     var body = '';
     req.on('data', function(chunk) {
@@ -28,6 +38,7 @@ var server = http.createServer(function(req, res){
       res.end(daytype);
     });
   } else {
+    console.log(req.method);
     console.log(req.url);
     notFound();
   }
