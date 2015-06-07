@@ -1,0 +1,66 @@
+<!-- MAIN CONTENT -->
+        <div id="main_content_wrap" class="outer" style="padding:20px">
+            <header>
+                <div class="topcoat-navigation-bar" ng-controller="pageslideCtrl">
+        <div class="topcoat-navigation-bar__item left quarter">
+            <a class="topcoat-icon-button--quiet" href="" ng-click="toggle()">
+                <span class="topcoat-icon topcoat-icon--menu-stack"></span>
+            </a>
+            <div pageslide ps-open="checked" ps-side="left" ps-push="true" >
+                    <div style="padding:20px 0 0 0" id="demo-right">
+                        <ul class="topcoat-list">
+                            <a href="#/home"><li class="topcoat-list__item" ng-click="toggle()">Home</li></a>
+                            <a href="#/user"><li class="topcoat-list__item" ng-click="toggle()">User</li></a>
+                            <a href="#/calendar"><li class="topcoat-list__item" ng-click="toggle()">Calendar</li></a>
+            </ul>
+                    </div>
+                </div>
+        </div>
+        <div class="topcoat-navigation-bar__item center half">
+            <h1 class="topcoat-navigation-bar__title">Pradnya Dipa</h1>
+        </div>
+        <div class="topcoat-navigation-bar__item right quarter">
+            <a class="topcoat-icon-button--quiet">
+                <span class="topcoat-icon topcoat-icon--edit"></span>
+            </a>
+        </div>
+    </div>
+
+
+            <h1>
+                <a name="angularjs-pageslide-directive" class="anchor" href="#angularjs-pageslide-directive"><span class="octicon octicon-link"></span></a>Welcome
+            </h1>
+            </header>
+
+            <section id="main_content" class="inner">
+            
+            
+            <h3>Calendar</h3>
+
+            <div ng-controller="pageslideCtrl">
+                <div pageslide ps-open="checked" ps-side="left" ps-squeeze="true" ps-cloak="false">
+                    <div style="padding:20px" id="demo-right">
+                    </div>
+                </div>
+            </div>
+
+            <div id="user-form" class="row" ng-controller="calendarController">
+                <div class="col-sm-8 col-sm-offset-2 text-center">
+                    <form>
+                        <div class="form-group">
+                            <label>Masukkan tanggal:</label>
+                            <input class="date" type="date" name="date"placeholder="yyyy-mm-dd" ng-model="formData.date" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-lg" ng-click="getDateProperty()">Hitung</button>
+                     </form>
+                </div>
+                <h1>Output: 
+            		<span class="label label-info">{{ date_property.Triwara }}</span>
+            		<span class="label label-info">{{ date_property.Pancawara }}</span>
+            		<span class="label label-info">{{ date_property.Saptawara }}</span>
+            		<span class="label label-info">{{ date_property.Wuku }}</span>
+            	</h1>
+            </div>            
+            <br/>
+        </section>
+        </div>

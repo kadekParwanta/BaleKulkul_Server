@@ -1,0 +1,89 @@
+<!-- MAIN CONTENT -->
+        <div id="main_content_wrap" class="outer" style="padding:20px">
+            <header>
+                <div class="topcoat-navigation-bar" ng-controller="pageslideCtrl">
+        <div class="topcoat-navigation-bar__item left quarter">
+            <a class="topcoat-icon-button--quiet" href="" ng-click="toggle()">
+                <span class="topcoat-icon topcoat-icon--menu-stack"></span>
+            </a>
+            <div pageslide ps-open="checked" ps-side="left" ps-push="true" >
+                    <div style="padding:20px 0 0 0" id="demo-right">
+                        <ul class="topcoat-list">
+                            <a href="#/home"><li class="topcoat-list__item" ng-click="toggle()">Home</li></a>
+                            <a href="#/user"><li class="topcoat-list__item" ng-click="toggle()">User</li></a>
+                            <a href="#/calendar"><li class="topcoat-list__item" ng-click="toggle()">Calendar</li></a>
+            </ul>
+                    </div>
+                </div>
+        </div>
+        <div class="topcoat-navigation-bar__item center half">
+            <h1 class="topcoat-navigation-bar__title">Pradnya Dipa</h1>
+        </div>
+        <div class="topcoat-navigation-bar__item right quarter">
+            <a class="topcoat-icon-button--quiet">
+                <span class="topcoat-icon topcoat-icon--edit"></span>
+            </a>
+        </div>
+    </div>
+
+
+            <h1>
+                <a name="angularjs-pageslide-directive" class="anchor" href="#angularjs-pageslide-directive"><span class="octicon octicon-link"></span></a>Welcome
+            </h1>
+            </header>
+
+            <section id="main_content" class="inner">
+            
+            
+            <h3>content</h3>
+
+            <div ng-controller="pageslideCtrl">
+                <div pageslide ps-open="checked" ps-side="left" ps-squeeze="true" ps-cloak="false">
+                    <div style="padding:20px" id="demo-right">
+                    </div>
+                </div>
+            </div>
+
+            <div ng-controller="mainController">
+                <div class="container">
+                    <div class="jumbotron text-center">
+                        <h1>Total User: <span class="label label-info">{{ users.length }}</span></h1>
+                    </div>
+
+                    <div id="todo-list" class="row">
+                        <div class="col-sm-4 col-sm-offset-4">
+                
+                            <div class="checkbox" ng-repeat="user in users">
+                                <label>
+                                    <input type="checkbox" ng-click="deleteUser(user.id)"> {{ user.name }}
+                                </label>
+                            </div>
+
+                            <p class="text-center" ng-show="loading">
+                                <span class="fa fa-spinner fa-spin fa-3x"></span>
+                            </p>
+
+                        </div>
+                    </div>
+
+                    <div id="user-form" class="row">
+                        <div class="col-sm-8 col-sm-offset-2 text-center">
+                            <form>
+                                <div class="form-group">
+
+                                     <!-- BIND THIS VALUE TO formData.text IN ANGULAR -->
+                                    <input type="text" class="form-control input-lg text-center" placeholder="user name" ng-model="formData.user_name">
+                                    <input type="password" class="form-control input-lg text-center" placeholder="password" ng-model="formData.password">
+                                </div>
+
+                                <!-- createUser() WILL CREATE NEW USER -->
+                                <button type="submit" class="btn btn-primary btn-lg" ng-click="createUser()">Register</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <br/>
+        </section>
+        </div>
