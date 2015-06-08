@@ -1,1 +1,1 @@
-web: node kalendar_server.js
+web: node server.js

@@ -1,0 +1,51 @@
+<!doctype html>
+
+<html>
+<head>
+	<!-- META -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Pradnya Dipa</title>
+
+	<!-- SCROLLS -->
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">	
+	<link rel="stylesheet" href="lib/topcoat/css/topcoat-mobile-light.min.css"/>
+    <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/foundation/5.0.0/css/foundation.min.css">
+	
+	<style>
+		html 					{ overflow-y:scroll; }
+		#todo-list 				{ margin-bottom:30px; }
+		#todo-form 	 			{ margin-bottom:50px; }
+	</style>
+
+	<style>
+            /* Needed for hiding crollbars when pushing */
+            html {
+                overflow-x: hidden;
+            }
+            .ng-pageslide {
+                background: #eee;
+            }
+        </style>
+
+	<!-- SPELLS -->
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.1.5/angular-mobile.js"></script>
+	<script src="lib/js/angular-pageslide-directive.min.js"></script>
+
+	<script src="js/controllers/userController.js"></script>
+	<script src="js/controllers/pageslideCtrl.js"></script>
+	<script src="js/controllers/calendarModule.js"></script>
+	<script src="js/services/user.js"></script>
+	<script src="js/services/calendar.js"></script>
+	<script src="js/core.js"></script>
+
+</head>
+<!-- SET THE CONTROLLER -->
+<body ng-app="BaleKulkul">
+<div ng-view></div>
+</body>
+</html>
